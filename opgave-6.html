@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      // statisk import
+      import users from "./users.json" with { type: "json" };
+      console.log(users);
+
+      // dynamisk import
+      async function loadJSON(path) {
+        const jsonData = (await import(path, { with: { type: "json" } }))
+          .default;
+        console.log(jsonData);
+        return jsonData;
+      }
+
+      loadJSON("./users.json");
+    </script>
+  </body>
+</html>
