@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      import { MathUtils, TextUtils } from "./opgave-2-utils.mjs";
+
+      // --- MATEMATIK ---
+      console.log("Primtal op til 30:", MathUtils.primtalOpTil(30));
+      console.log("Gennemsnit:", MathUtils.gennemsnit([2, 4, 6, 8]));
+
+      // --- TEKST ---
+      const tekst = "Hej verden fra Node.js";
+      console.log("Uppercase:", TextUtils.tilUpper(tekst));
+      console.log("Ord i sætning:", TextUtils.ordTæl(tekst));
+    </script>
+  </body>
+</html>

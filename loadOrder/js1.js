@@ -1,0 +1,1 @@
+output('greetings from js1');

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>The Page</h1>
+  <p id="output"></p>
+  <script>
+    function output(txt) {
+      document.getElementById("output").innerHTML+=txt + "<br>";
+    }
+  </script>
+  <script type="module" src="js0.js"></script> <!-- modules one import -->
+  <script type="module" src="js0.js"></script> <!-- modules one import -->
+  <script type="module">import "./js0.js";</script> <!-- modules one import -->
+  <script type="module">import "./js0.js";</script> <!-- modules one import -->
+  <script src="js1.js"></script> <!-- normal repeat -->
+  <script src="js1.js"></script> <!-- normal repeat -->
+  <script>output('Call from the body');</script> <!-- normal script -->
+  <!--
+        greetings from js1
+        greetings from js1
+        Call from the body
+        greetings from js0  -- imported once
+
+        moduler bliver kun importeret én gang selvom der er flere referencer til det
+        der er defered
+    -->
+</body>
+
+</html>

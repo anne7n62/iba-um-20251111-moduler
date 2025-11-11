@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>The Page</h1>
+  <p id="output"></p>
+  <script>
+    function output(txt) {
+      document.getElementById("output").innerHTML+=txt + "<br>";
+    }
+  </script>
+  <script type='module'>output('inline module says hi')</script>
+  <script src='js1.js'></script>
+  <script defer>output('inline script says hi')</script>
+  <script defer src='js3.js'></script>
+  <script>output('Call from the body');</script> <!-- normal script -->
+  <!--
+        greetings from js1
+        inline script says hi    --ignorer defer l. 16
+        Call from the body
+        inline module says hi
+        greetings from js3
+
+        inline scripts der ikke er moduler ignorere defer
+    -->
+</body>
+
+</html>

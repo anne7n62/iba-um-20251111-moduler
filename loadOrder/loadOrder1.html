@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>The Page</h1>
+  <p id="output"></p>
+  <script>
+    function output(txt) {
+      document.getElementById("output").innerHTML+=txt + "<br>";
+    }
+  </script>
+  <script type='module' src='js0.js'></script> <!-- module -->
+  <script src='js1.js'></script> <!-- normal script -->
+  <script defer src='js2.js'></script> <!-- normal but deferred -->
+  <script src='js3.js'></script> <!-- normal script -->
+  <script>output('Call from the body');</script> <!-- normal script -->
+  <!--
+        greetings from js1
+        greetings from js3
+        Call from the body
+        greetings from js0
+        greetings from js2
+
+        moduler og deferred scripts kører efter siden er loaded
+        Moduler er også deferred
+    -->
+</body>
+
+</html>
